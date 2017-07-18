@@ -21,7 +21,7 @@ superagent.get(cnodeUrl).end(function(err, res) {
     console.log(topicUrls);
     var ep = new eventproxy();
     ep.after('topic_html', topicUrls.length, function(topics) {
-        topics = topics.map(function(index, topicPair) {
+        topics = topics.map(function(topicPair) {
             var topicUrl = topicPair[0];
             var topicHtml = topicPair[1];
             var $ = cheerio.load(topicHtml);

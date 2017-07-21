@@ -33,7 +33,7 @@ superagent.get(cnodeUrl).end(function(err, res) {
         });
         console.log('final');
         console.log(topics);
-    })
+    });
     topicUrls.forEach(function(topicUrl) {
         superagent.get(topicUrl)
             .end(function(err, res) {

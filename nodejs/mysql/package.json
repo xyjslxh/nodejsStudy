@@ -1,0 +1,14 @@
+{
+  "name": "mysql",
+  "version": "1.0.0",
+  "description": "mysql",
+  "main": "mysql",
+  "scripts": {
+    "test": "mysql"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "mysql": "mysqljs/mysql"
+  }
+}

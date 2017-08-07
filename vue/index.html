@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <p>{{message}}</p> -->
+        <div v-html="message"></div>
+    </div>
+    <script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: {
+            message: '<div>Hello Vue.js!</div>'
+        },
+        beforeCreate: function() {
+            console.log(this.message);
+        },
+        created: function() {
+            console.log(this.message);
+        }
+    });
+    </script>
+</body>
+
+</html>

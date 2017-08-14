@@ -9,13 +9,34 @@
 <body>
     <div id="app">
         <!-- <p>{{message}}</p> -->
-        <div v-html="message"></div>
+        <div v-html="message" v-bind:id="divId"></div>
+        <button v-on:click="changeState">click me</button>
+        <span v-if="isShow">show me</span>
+        <div>{{reversedMessage}}</div>
+        <div>{{now()}}</div>
     </div>
     <script type="text/javascript">
-    new Vue({
+    var vm = new Vue({
         el: '#app',
         data: {
-            message: '<div>Hello Vue.js!</div>'
+            message: '<div>Hello Vue.js!</div>',
+            divId: 1,
+            isDisabled: false,
+            isShow: true
+        },
+        computed: {
+            reversedMessage: function() {
+                // return this.message.split('').reverse().join('');
+                return Date.now();
+            }
+        },
+        methods: {
+            now: function() {
+                return Date.now();
+            },
+            changeState: function() {
+                this.isShow = !this.isShow;
+            }
         },
         beforeCreate: function() {
             console.log(this.message);
